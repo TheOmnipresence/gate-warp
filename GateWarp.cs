@@ -71,10 +71,8 @@ namespace GateWarp
 
             //On.MioGame.On_Game.play_card.
             //On.MioGame.On_Game.play_dialog_1.Prefix += Play_dialog_1_Prefix;
-            //On.MioGame.On_Game.play_dialog_2.Prefix += Play_dialog_2_Prefix;
+            On.MioGame.On_Game.play_dialog_2.Prefix += Play_dialog_2_Prefix;
             //On.MioGame.On_Game.play_dialog_2.Suffix += Play_dialog_2_Suffix;
-            //On.MioGame.On_Game.play_dialog_3.Prefix += Play_dialog_3_Prefix;
-            //On.MioGame.On_Game.play_dialog_4.Prefix += Play_dialog_4_Prefix;
         }
 
         private unsafe void Play_dialog_2_Suffix(Game* self, ref bool retBuffer, MioGame.String* dialog_id, Vec_float_3 world_position, Text_params @params, Id owner)
@@ -82,24 +80,9 @@ namespace GateWarp
             
         }
 
-        private unsafe void Play_dialog_4_Prefix(Game* self, Node2* unused_1, Dialog* dialog_component, float max_dist, Id owner)
-        {
-            ref var dia = ref Unsafe.AsRef<Dialog>(dialog_component);
-            dia.font_size = 8;
-        }
-
-        private unsafe void Play_dialog_3_Prefix(Game* self, MioGame.String* dialog_id, Node2* node, Vec_float_3 local_position, Text_params unused_1, Id owner)
-        {
-            try
-            {
-                ref var dia = ref Unsafe.AsRef<MioGame.String>(dialog_id);
-                dia = Util.StringToMioString("TXT_PANEL_CEREMONY");
-            }
-            catch (Exception ex) { LogMessage("Why not :" + ex); }
-        }
-
         private unsafe void Play_dialog_2_Prefix(Game* self, MioGame.String* dialog_id, Vec_float_3 world_position, Text_params @params, Id owner)
         {
+            return;
             //try
             //{
             //    ref var dia = ref Unsafe.AsRef<MioGame.String>(dialog_id);
