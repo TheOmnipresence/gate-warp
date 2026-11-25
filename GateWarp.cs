@@ -20,9 +20,9 @@ namespace GateWarp
             ConnectMenus();
         }
 
-        public static void ReloadData()
+        public void ReloadData()
         {
-            using (StreamReader file = System.IO.File.OpenText(@".\mods\GateWarp\warps.dat"))
+            using (StreamReader file = System.IO.File.OpenText(Path.Combine(this.GetModFolderPath(), "warps.dat")))
             {
                 string asText = file.ReadToEnd();
                 foreach (string line in asText.Split("\n"))
